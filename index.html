@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gik339 Labb 1 </title>
+
+    <!--
+    Reflektion uppgift 1
+    1) Beskriver vilken betydelse placeringen av <script>-taggen har.
+    Webbläsaren tolkar HTML-kod uppifrån och ner. Om taggen `<script>` placeras inuti `<head>` utan att använda`defer` kommer koden att exekveras innan HTML-elementen i `<body>` har laddats klart, 
+    detta kan orsaka fel om koden har till syfte interagera med sidan. 
+    Men om koden istället placeras längst ner i `<body>` kommer HTML-sidan att laddas först.
+    
+    2)Beskriver hur attributet defer fungerar.
+    Defer gör att scriptet hämtas i bakgrunden medan HTML-sidan laddas , och körs först när hela HTML-dokumentet är färdigladdat.
+    -->
+
+<!-- Scriptet laddas i bakgrunden med defer och körs först när sidan har lästs in -->
+
+<script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Gik339 Labb 1</h1>
+    <p>Denna sida visar hur scriptet laddas i bakgrunden genom att använda defer.</p>
+</body>
+</html>
