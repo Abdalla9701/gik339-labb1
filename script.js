@@ -71,24 +71,22 @@ const add = (num1, num2) => {
     console.log(num2 === '0');
     console.log(num2 === 0);
     console.log(num1 == NaN);
-    return num1 + num2;
+
+    // ternary operator
+    console.log(num1 ? "truthy" : "falsy");
+
+    // if-sats som kollar att värdena är giltiga nummer
+    if (
+        num1 !== null && num1 !== undefined &&
+        num2 !== null && num2 !== undefined &&
+        typeof num1 === 'number' && typeof num2 === 'number' &&
+        !Number.isNaN(num1) && !Number.isNaN(num2)
+    ) {
+        return num1 + num2;
+    }
+
+    return "Felaktigt inmatade värden: båda värden måste vara nummer och inte null eller undefined";
 };
-
-//ternary operator
-console.log(num1 ? "truthy" : "falsy");
-
-// if-sats som kollar att värdarna är null eller undefined
-if (
-num1 == null && num1 !== undefined &&
-num2 == null && num2 !== undefined &&
-typeof num1 === 'number' && typeof num2 === 'number' &&
-!Number.isNaN(num1) && !Number.isNaN(num2)
-){
-    return num1 + num2;
-} else {
-    return "r felaktigt inmatade värden: båda värden måste vara nummer och inte null eller undefined ";
-
-}
 
 //reflection uppgift 4:
 
@@ -119,6 +117,8 @@ console.log("returvärdet", add(sum, 1));
 console.log("Test 2: anrop med argumenten 0 och 3--" );
 sum = add("0", 3);
 console.log("returvärdet", sum);
+
+
 
 console.log("Test 3: anrop med argumenten 3 och num1 --" );
 console.log("returvärdet", add(3, "num1"));
