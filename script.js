@@ -141,13 +141,32 @@ console.log("slutvärde sum: ", sum );
 /*
 
 1) Förklarar skillnaden mellan parameter, variabel och argument.
-
+En variabel är en namngiven behållare för att lagra ett värde (t.ex. const num1 = 0), 
+medan en Parameter är en platshållare som används inom parenteserna i funktionen (num1, num2). 
+Dessutom, en funktion kan ha flera parametrar, och varje anrop till funktionen kan ha olika argument. 
+Slutligen, Argument det är de specifika värdena som överlämnas när en funktion kallas (t.ex. -5 och num1).
 
 2)Vilket output får du allra sist (värdet i num1) och varför?
 
-
+värdet blir 0, eftersom variabeln `num1` inuti funktionen endast används inom funktionens omfattning och inte ändrar variabeln utanför den.
 
 3)Förklarar steg för steg vad som händer i funktionen när den anropas: vilka värden parametrarna får, vad jämförelserna och villkorsoperatorn ger, om if-satsen släpps igenom, och vilket värde som returneras. Det räcker att göra hela genomgången för ett av anropen – för övriga anrop räcker det att förklara returvärdet.
+Funktionen add tar emot två parametrar, num1 och num2. När funktionen anropas med argumenten -5 och num1, får den lokala parametern num1 värdet -5 och den lokala parametern num2 värdet 0, eftersom den globala variabeln num1 har värdet 0.
+- Jämförelserna blir:
+  - num1 == 0 → false, eftersom -5 inte är lika med 0.
+  - num2 === '0' → false, eftersom num2 är talet 0 och inte strängen '0'.
+  - num2 === 0 → true, eftersom num2 är talet 0.
+  - num1 == NaN → false, eftersom -5 inte är NaN.
+- Ternary-operatorn `num1 ? "truthy" : "falsy"` ger `"truthy"`, eftersom alla tal utom 0 och NaN är truthy.
+- If-satsen släpps igenom, eftersom båda parametrarna är tal, inte är null eller undefined och inte är NaN. Funktionen returnerar därför `-5 + 0`, alltså `-5`.
+
+Returvärdet i de andra testen:
+- Test 1 `add(sum, 1)` → `sum` är `false`, alltså inte ett tal. Funktionen returnerar felmeddelandet.
+- Test 2 `add("0", 3)` → `"0"` är en sträng och inte ett tal. Funktionen returnerar felmeddelandet.
+- Test 3 `add(3, "num1")` → `"num1"` är en sträng och inte ett tal. Funktionen returnerar felmeddelandet.
+- Test 4 `add(-5, num1)` → argumenten är talen -5 och 0. Funktionen returnerar `-5`.
+- Test 5 `add(arg1, 7)` → `arg1` är `undefined`. Funktionen returnerar felmeddelandet.
+- Test 6 `add()` → båda parametrarna blir `undefined`. Funktionen returnerar felmeddelandet.
 
 
 
